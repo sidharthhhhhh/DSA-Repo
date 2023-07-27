@@ -106,15 +106,15 @@ class GfG
 	    Node p1 = node1;
 	    Node p2 = node2;
 	    
-	    Node head;
+	   // Node head;
 	    Node h;
-	    head = h = null;
+	    h = null;
 	    
 	    while(p1 != null && p2 != null){
 	        if(p1.data < p2.data){
 	            Node temp = new Node(p1.data);
 	            if(h == null){
-	                head = h =  temp;
+	                h =  temp;
 	            }
 	            else{
 	                temp.next = h;
@@ -127,7 +127,7 @@ class GfG
 	        else{
 	            Node temp = new Node(p2.data);
 	            if(h == null){
-	                head = h  =temp;
+	                h  =temp;
 	            }
 	            else{
 	                temp.next = h;
