@@ -103,13 +103,7 @@ class Solution
 	        return head;
 	        
 	    }
-	   // int size = 1;
-	   // Node temp1 = head;
-	   // while(temp1.next != null){
-	   //     size++;
-	   //     temp1 = temp1.next;
-	        
-	   // }
+	  
 	    Node temp = head;
 	    for(int i = 0;i<x-2;i++){
 	       temp = temp.next;
