@@ -24,9 +24,7 @@ class GfG {
     int transitionPoint(int arr[], int n) {
         // code here
         
-        if(arr.length == 1 && arr[0] ==1){
-            return 0;
-        }
+       
         if(arr[0] == 1){
             return 0;
         }
