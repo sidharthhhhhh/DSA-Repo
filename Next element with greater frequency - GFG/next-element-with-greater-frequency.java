@@ -60,9 +60,7 @@ class solver
         ans[n-1] = -1;
         st.push(freq[n-1]);
         stc.push(arr[n-1]);
-        // Set<Integer> keys = hm.keySet();
-        // System.out.println(hm);
-        // System.out.println(freq);
+        
         
         for(int i = n-2;i>=0;i--){
             
@@ -76,12 +74,7 @@ class solver
                 else{
                     ans[i] = stc.peek();
                     
-                    // int t = st.peek();
-                    // for(int k : keys){
-                    //     if(hm.get(k) == t){
-                    //         ans[i] = k;
-                    //     }
-                    // }
+                    
                     
                 }
                 st.push(freq[i]);
