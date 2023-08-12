@@ -47,7 +47,38 @@ public class Main {
 class Solution {
     void matchPairs(char nuts[], char bolts[], int n) {
         // code here
-        Arrays.sort(nuts);
-        Arrays.sort(bolts);
+        // Arrays.sort(nuts);
+        // Arrays.sort(bolts);
+        char[] order = {'!','#', '$', '%', '&', '*', '@','^','~'};
+        HashMap<Character,Integer> hm = new HashMap<>();
+        
+        for(int i = 0;i<n;i++){
+            hm.put(nuts[i],1);
+        }
+        
+        int ind = 0;
+        
+        for(int i = 0;i<order.length;i++){
+            
+            if(hm.containsKey(order[i])){
+                nuts[ind] = order[i];
+                ind++;
+            }
+            
+        }
+        
+        ind = 0;
+        for(int i = 0;i<order.length;i++){
+            
+            if(hm.containsKey(order[i])){
+                bolts[ind] = order[i];
+                ind++;
+            }
+            
+        }
+        
+        
+        
     }
+    
 }
