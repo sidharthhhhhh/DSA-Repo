@@ -64,6 +64,8 @@ class Driverclass
 // } Driver Code Ends
 
 
+
+
 //User function Template for Java
 
 /*
@@ -81,6 +83,33 @@ class Node
 class Solution
 {
     //Function to sort a linked list of 0s, 1s and 2s.
+    // static ArrayList<Node> addNode(Node find,Node head,Node tail , int t){
+        
+    //     Node temp = find;
+    //     ArrayList<Node> arr = new ArrayList<>();
+    //     while(temp != null){
+    //         if(temp.data == t){
+                
+    //             if(head == null){
+    //                 head = tail = temp;
+    //             }
+    //             else{
+    //                 tail.next = temp;
+    //                 tail = temp;
+    //             }
+    //         }
+    //         temp = temp.next;
+    //     }
+        
+    //     arr.add(head);
+    //     arr.add(tail);
+        
+        
+    //     return arr;
+        
+        
+        
+    // }
     static Node segregate(Node head)
     {
         // add your code here
@@ -160,6 +189,15 @@ class Solution
             tt.next = null;
             return zh;
         }
+        // Node h,t;
+        // h = t = null;
+        
+        // ArrayList<Node> arr = addNode(head,h,t,0);
+        // arr = addNode(head,arr.get(0),arr.get(1),1);
+        // arr =  addNode(head,arr.get(0),arr.get(1),2);
+        // arr.get(1).next = null;
+        // return arr.get(0);
+        
         
     }
 }
