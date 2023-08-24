@@ -135,11 +135,9 @@ class Tree {
     
     
     int minValue(Node node) {
-        if(node == null){
-            return -1;
-        }
-        int ans = fun(node);
         
+        int ans = fun(node);
+        if(ans==Integer.MAX_VALUE) return -1;
         return ans;
     }
 }
