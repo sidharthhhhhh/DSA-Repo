@@ -127,7 +127,7 @@ class Tree {
         
         
         int left = fun(node.left);
-        int right = fun(node.right);
+        int right = fun(node.left);
         
         int mini = Math.min(node.data,Math.min(left,right));
         return mini;   
