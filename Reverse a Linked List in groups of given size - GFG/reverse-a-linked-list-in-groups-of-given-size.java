@@ -80,62 +80,72 @@ class Node
 
 class Solution
 {
-    public static Node reverse(Node node, int k)
+    static int listSize(Node head){
+        int size = 0;
+        while(head != null){
+            head = head.next;
+            size++;
+        }
+        return size;
+    }
+    public static Node reverse(Node head, int k)
     {
         //Your code here
-        Node prevh;
-        Node prevt;
-        
-        Node currh;
-        Node currt;
-        int s = 0;
-        
-        prevh = prevt = currh = currt =  null;
-        
-        Node temp = node;
-        
-        while(temp != null){
-            Node t = new Node(temp.data);
-            if(currh == null){
-                currh = currt = t;
-                // currt.next = null;
-                s++;
+        Node prevh,prevt;
+        prevh = null;
+        prevt = null;
+        Node temp = head;
+
+        while(listSize(temp) > 0){
+            Node currh , currt;
+            currh= null;
+            currt = null;
+
+
+            if(listSize(temp) >= k){
+
+                for(int i = 0;i<k;i++){
+                    Node t = new Node(temp.data);
+                    if(currh == null){
+                        currh = currt = t;
+                    }
+                    else{
+                        t.next = currh;
+                        currh = t;
+                    }
+                    temp = temp.next;
+                }
+                
+
             }
             else{
-                t.next = currh;
-                currh = t;
-                s++;
-                
-            }
-            if(s == k){
-                if(prevh == null){
-                    prevh = currh;
-                    prevt = currt;
-                    
-                    currh = currt = null;
-                    s = 0;
-                }
-                else{
-                    prevt.next = currh;
-                    prevt = currt;
-                    
-                    currh = currt = null;
-                    s = 0;
-                    
-                    
+                while(temp !=null){
+                    Node t = new Node(temp.data);
+                    if(currh == null){
+                        currh = currt = t;
+                    }
+                    else{
+                        t.next = currh;
+                        currh = t;
+                    }
+                    temp = temp.next;
                 }
             }
-            if(temp.next == null && s < k){
+
+            if(prevh == null){
+                prevh = currh;
+                prevt = currt;
+            }
+            else{
                 prevt.next = currh;
                 prevt = currt;
-               
-                return prevh;
-                
             }
-            temp = temp.next;
-            
         }
+
         return prevh;
+       
+        
+        
     }
 }
 
