@@ -62,6 +62,8 @@ class Remove_Duplicate_From_LL
 // } Driver Code Ends
 
 
+
+
 /*
 class Node
     {
@@ -77,38 +79,60 @@ class GfG
     Node removeDuplicates(Node head)
     {
 	    // Your code here
-	    Node res = head;
-	    Node ans = head;
-	    
-	    head = head.next;
-	    
-	    while(head != null){
-	        if(head.data != ans.data){
-	            Node temp = new Node(head.data);
-	            ans.next = temp;
-	            ans = temp;
-	            
-	        }
-	        head = head.next;
-	    }
-	    
-	    
-	   // while(head.next != null){
-	   //     if(head.data != head.next.data){
-	   //         Node temp = new Node(head.data);
-	   //         if(ans == null){
-	   //             res = ans = temp;
-	                
-	   //         }
-	   //         else{
-	   //             ans.next = temp;
-	   //             ans = temp;
-	   //         }
-	   //     }
-	   //     head = head.next;
-	   // }
-	    
-	    return res;
+	   if(head.next == null){
+	       return head;
+	   }
+	   Node ansh,anst;
+	   ansh = null;
+	   anst = null;
+	   
+	   while(head.next.next != null){
+	       
+	       if(head.data != head.next.data){
+	           Node temp = new Node(head.data);
+	           if(ansh == null){
+	               ansh = anst = temp;
+	           }
+	           else{
+	               anst.next = temp;
+	               anst = temp;
+	               
+	           }
+	       }
+	       head = head.next;
+	       
+	   }
+	   if(head.data != head.next.data){
+	           Node temp = new Node(head.data);
+	           Node temp2 = new Node(head.next.data);
+	           if(ansh == null){
+	               ansh = anst = temp;
+	               anst.next = temp2;
+	               anst = temp2;
+	           }
+	           else{
+	               anst.next = temp;
+	               temp.next = temp2;
+	               anst = temp;
+	               
+	           }
+	   }
+	   else{
+	       
+	           Node temp = new Node(head.data);
+	           if(ansh == null){
+	               ansh = anst = temp;
+	           }
+	           else{
+	               anst.next = temp;
+	               anst = temp;
+	               
+	           }
+	       
+	       
+	   }
+	   
+	   return ansh;
 	
     }
 }
