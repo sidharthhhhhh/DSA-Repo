@@ -83,10 +83,7 @@ class GfG
 class Solution
 {
     //Function to merge K sorted linked list.
-    // public static class LinkedList(){
-    //     Node h;
-    //     Node t;
-    // }
+    
     Node merge(Node head1,Node head2){
         
         Node ansh = new Node(-1);
@@ -105,13 +102,6 @@ class Solution
                 head2 = head2.next;
                 
             }
-            // else{
-            //     anst.next = head1;
-            //     head1.next = head2;
-            //     anst= head2;
-            //     head1= head1.next;
-            //     head2= head2.next;
-            // }
             
         }
         
