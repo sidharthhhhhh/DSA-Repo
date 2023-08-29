@@ -122,8 +122,8 @@ class Solution
         Node h1 = arr[0];
         for(int i = 1;i<K;i++){
             Node h2 = arr[i];
-            Node t = merge(h1,h2);
-            h1 = t;
+            h1= merge(h1,h2);
+        
         }
         return h1;
     }
