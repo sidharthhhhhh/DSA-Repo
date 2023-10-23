@@ -27,15 +27,6 @@ class GFG
 //User function Template for Java
 class Solution
 {
-    // public String rev(String s){
-    //     String ans = "";
-        
-    //     for(int i = 0;i<s.length();i++){
-    //         ans  = s.charAt(i) + ans;
-    //     }
-    //     return ans;
-    // }
-   
     public String reverseWords(String S)
     {
         // your code here
@@ -53,42 +44,6 @@ class Solution
             }
         }
         ans = t+ ans;;
-        
-        // Stack<String> st = new Stack<>();
-        // String t = "";
-        // for(int i = S.length()-1;i>=0;i--){
-        //     char ch = S.charAt(i);
-        //     if(ch == '.'){
-        //         st.push(t);
-        //         st.push(".");
-        //         t = "";
-        //     }
-        //     else{
-        //         t += ch;
-        //     }
-        // }
-        // st.push(t);
-        
-        
-        // String ans = "";
-        
-        // while(st.size()>0){
-        //     ans += st.pop();
-        // }
-        // String[] arr = n.split("[.]");
-        
-        // String ans = "";
-        
-        // for(int i = arr.length  -1;i>=0;i--){
-            
-        //     if( i == 0){
-        //         ans += arr[i];
-        //     }
-        //     else{
-        //         ans += arr[i] + '.';
-        //     }
-            
-        // }
         return ans;
         
     }
