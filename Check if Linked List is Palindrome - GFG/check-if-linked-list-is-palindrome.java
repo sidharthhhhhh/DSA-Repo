@@ -100,40 +100,28 @@ class Node
 class Solution
 {
     //Function to check whether the list is palindrome.
+    Node t;
+    boolean ans = true;;
+    void chk(Node head){
+        
+        if(head == null){
+            return;
+        }
+        
+        chk(head.next);
+        if(t.data != head.data){
+            ans = false;
+            return;
+        }
+        t = t.next;
+        
+    }
     boolean isPalindrome(Node head) 
     {
         //Your code here
-        Node h;
-        
-        h = null;
-        
-        Node temp = head;
-        while(temp != null){
-            
-            Node t  = new Node(temp.data);
-            if( h == null){
-                h = t;
-                
-            }
-            else{
-                t.next = h;
-                h =t;
-            }
-            temp = temp.next;
-            
-            
-        }
-        Node c1 = head;
-        Node c2 = h;
-        
-        while(c1 != null && c2 != null){
-            if(c1.data != c2.data){
-                return false;
-            }
-            c1 = c1.next;
-            c2 = c2.next;
-        }
-        return true;
+        t = head;
+        chk(head);
+        return ans;
     }    
 }
 
