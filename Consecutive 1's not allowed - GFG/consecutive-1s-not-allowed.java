@@ -28,15 +28,26 @@ class Solution {
     long countStrings(int n) {
         // code here
         int mod = 1000000007; 
-        long[] zero = new long[n+1];
-        long[] one = new long[n+1];
-        zero[1] = 1;
-        one[1] = 1;
+        //sc O(n)
+        // long[] zero = new long[n+1];
+        // long[] one = new long[n+1];
+        // zero[1] = 1;
+        // one[1] = 1;
+        
+        // for(int i = 2;i<=n;i++){
+        //     zero[i] = (zero[i-1] + one[i-1]) % mod;
+        //     one[i] = zero[i-1] % mod;
+        // }
+        // return (one[n]+zero[n]) % mod;
+
+        long zero = 1;
+        long one = 1;
         
         for(int i = 2;i<=n;i++){
-            zero[i] = (zero[i-1] + one[i-1]) % mod;
-            one[i] = zero[i-1] % mod;
+            long t = one;
+            one = zero % mod;
+            zero = (t+zero)%mod;
         }
-        return (one[n]+zero[n]) % mod;
+        return (one+zero) % mod;
     }
 }
